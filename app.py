@@ -1,4 +1,4 @@
-
+import os
 from flask import Flask, render_template, request
 from models.pacientes import registrar_paciente, consultar_paciente
 from models.citas import reservar_cita, consultar_cita, actualizar_cita, consultar_cita_por_id
@@ -127,4 +127,4 @@ def sedes():
 
 # Ejecutar aplicación
 if __name__ == "__main__":
-    app.run(debug=True)
+app.run(host="0.0.0.0", port=int(os.environ.get("PORT",5000)))
